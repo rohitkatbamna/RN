@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-primary">
+    <head>
+        <title>Meet A Celebrity</title>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/50d83b71b0.js" crossorigin="anonymous"></script>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    </head>
+    <body class="text-center">
+        <header>
+            <h1>So You Want To Meet a Celebrity, You Came to Right Place.</h1>
+            <h2>This Website Will generate A Celebrity I think You Should Meet</h2>
+            <p>Just Click On button 
+            </p>
+            <p>This Website is random female celebrity generator. This Website is a practice in random generation and HTML tag change Via Javscript</p>
+        </header>
+        <main>
+            <button onclick="myFunction()" class="btn btn-dark col-2">Click Me!<i class="fas fa-heart"></i></button>
+            <div>
+
+                <br>
+                <h2 id= "main"></h2>
+                <img id="ci" src="">
+                <div class="mb-3"> </div>
+            </div>
+            
+            <script>
+                var aea = [];
+                var i = 0;
+                function myFunction() {
+                    const aph=document.querySelector('#main');
+                    const ai=document.querySelector('#ci');
+                    
+                    const girlNames = ["Samridhi Dewan" , "Maryam Zakaria" , 
+                                        "Anjana Om Kashyap", "Pranitha Subhash" , "Surilie Gautam" , "Rochelle Rao", 
+                                        "Aishwarya Rai" , "Sanjana Sanghi" , "Sanya Malhotra" , 
+                                        "Esha Gupta" , "Kalki Koechlin" ,"Tisca Chopra", "Chitrangada Singh" , "Deepika Padukone" , "Nargis Fakhri", 
+                                        "Alaya Furniturewalla" , "Kiara Advani" , "Kriti Sanon" , "Shreya Chaudhry" , "Rashmika Mandanna",
+                                        "Neha Pendse" , "Radhika Apte" , "Kainaat Arora" , "Fatima Sana Shaikh" , "Sagarika Ghatge Khan" , "Nushrratt Bharuccha", 
+                                        "Warina Hussain", "Kareena Kapoor" , "Mallika Sherawat" , "Kirti Kulhari" , 
+                                        "Shriya Saran" , "Tamannaah" , "Zareen Khan" , "Alia Bhatt" , "Kajol" , "Shraddha Kapoor" , 
+                                        "Tara Sutaria" , "Athiya Shetty" , "Megha Chakraborty" , "Catherine Tresa" , "Rakul Preet Singh" ,
+                                        "Ileana D'Cruz" , "Manushi Chhillar" , "Vaani Kapoor" , "Katrina Kaif" , 
+                                        "Vidya Balan" , "Saumya Tandon" , "Anushka Sharma" , "Bhumi Pednekar " , "Mithila Palkar" ,
+                                        "Samantha Ruth Prabhu" , "Munmun Dutta" , "Anupama Parameswaran" , "Gauahar Khan"  , "Priya Prakash Varrier " ,
+                                        "Yami Gautam" , "Nupur Sanon" , "Ananya Panday" , "Janhvi Kapoor" , "Aisha Sharma" , "Kajal Aggarwal" , "Sonnalli Seygall" ,
+                                        "Sara Ali Khan" , "Huma Qureshi" , "Daisy Shah" , "Parineeti Chopra" , "Pooja Hegde" , "Sushmita Sen" , "Sophie Choudry" , "Shruti Haasan",
+                                        "Disha Patani" , "Sonakshi Sinha" , "Taapsee Pannu" , "Mouni Roy" , "Neha Sharma" , "Jannat Zubair Rahmani" , "Nora Fatehi" , 
+                                        "Priyanka Chopra" , "Sobhita Dhulipala" ,"Diana Penty","Gal Gadot", " Sapna Pabbi", "Erica Fernandes", "Lisa Haydon"];
+                    if(i < girlNames.length){
+                        while(true){
+                            var rn =Math.floor(Math.random()*girlNames.length);
+                            if(aea.includes(rn)){
+                                continue;
+                            }
+                            else{
+                                aea.push(rn);
+                                i = i +1;
+                                console.log(aea.length);
+                                aph.innerHTML="This is " + girlNames[rn] + '. Would like to meet her ?';
+                                ai.src = `./F/${rn}.jpg`;
+                                break;
+                            }
+                        }
+                    }
+                    else{
+                        aea =[];
+                        i = 0;
+                        aph.innerHTML = 'END of the line click again to restart the list'
+                        ai.src= '';
+                    }
+                }
+
+            </script>
+        </main>
+    </body>
+
+</html>
