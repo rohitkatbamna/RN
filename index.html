@@ -23,7 +23,7 @@
         <main>
             <button onclick="myFunction()" class="btn btn-dark col-2">Click Me!<i class="fas fa-heart"></i></button>
             <div>
-
+                <div id ="no"></div>
                 <br>
                 <h2 id= "main"></h2>
                 <img id="ci" src="">
@@ -36,7 +36,8 @@
                 function myFunction() {
                     const aph=document.querySelector('#main');
                     const ai=document.querySelector('#ci');
-                    
+                    const gn=document.querySelector('#no');
+ 
                     const girlNames = ["Samridhi Dewan" , "Maryam Zakaria" , 
                                         "Anjana Om Kashyap", "Pranitha Subhash" , "Surilie Gautam" , "Rochelle Rao", 
                                         "Aishwarya Rai" , "Sanjana Sanghi" , "Sanya Malhotra" , 
@@ -64,6 +65,7 @@
                                 aea.push(rn);
                                 i = i +1;
                                 console.log(aea.length);
+                                gn.innerHTML= rn;
                                 aph.innerHTML="This is " + girlNames[rn] + '. Would like to meet her ?';
                                 ai.src = `./F/${rn}.jpg`;
                                 break;
