@@ -21,78 +21,18 @@
             <p>This Website is random female celebrity generator. This Website is a practice in random generation and HTML tag change Via Javscript</p>
         </header>
         <main>
-            <button onclick="myFunction()" class="btn btn-dark col-2">Click Me!<i class="fas fa-heart"></i></button>
+            <button onclick="myFunction()" class="btn btn-dark col-2" id="clickmebutton">Click Me!<i class="fas fa-heart"></i></button>
             <div>
-                <div id ="no"></div>
-                <br>
-                <h2 id= "main"></h2>
-                <img id="ci" src="">
-                <div class="mb-3"> </div>
+                <div id ="no" class="fs-1"></div>
             </div>
             
             <script>
-                var aea = [];
-                var i = 0;
-                function myFunction() {
-                    const aph=document.querySelector('#main');
-                    const ai=document.querySelector('#ci');
-                    const gn=document.querySelector('#no');
- 
-                    const girlNames = ["Samridhi Dewan" , "Maryam Zakaria" , 
-                                        "Anjana Om Kashyap", "Pranitha Subhash" , "Surilie Gautam" , "Rochelle Rao", 
-                                        "Aishwarya Rai" , "Sanjana Sanghi" , "Sanya Malhotra" , 
-                                        "Esha Gupta" , "Kalki Koechlin" ,"Tisca Chopra", "Chitrangada Singh" , "Deepika Padukone" , "Nargis Fakhri", 
-                                        "Alaya Furniturewalla" , "Kiara Advani" , "Kriti Sanon" , "Shreya Chaudhry" , "Rashmika Mandanna",
-                                        "Neha Pendse" , "Radhika Apte" , "Kainaat Arora" , "Fatima Sana Shaikh" , "Sagarika Ghatge Khan" , "Nushrratt Bharuccha", 
-                                        "Warina Hussain", "Kareena Kapoor" , "Mallika Sherawat" , "Kirti Kulhari" , 
-                                        "Shriya Saran" , "Tamannaah" , "Zareen Khan" , "Alia Bhatt" , "Kajol" , "Shraddha Kapoor" , 
-                                        "Tara Sutaria" , "Athiya Shetty" , "Megha Chakraborty" , "Catherine Tresa" , "Rakul Preet Singh" ,
-                                        "Ileana D'Cruz" , "Manushi Chhillar" , "Vaani Kapoor" , "Katrina Kaif" , 
-                                        "Vidya Balan" , "Saumya Tandon" , "Anushka Sharma" , "Bhumi Pednekar " , "Mithila Palkar" ,
-                                        "Samantha Ruth Prabhu" , "Munmun Dutta" , "Anupama Parameswaran" , "Gauahar Khan"  , "Priya Prakash Varrier " ,
-                                        "Yami Gautam" , "Nupur Sanon" , "Ananya Panday" , "Janhvi Kapoor" , "Aisha Sharma" , "Kajal Aggarwal" , "Sonnalli Seygall" ,
-                                        "Sara Ali Khan" , "Huma Qureshi" , "Daisy Shah" , "Parineeti Chopra" , "Pooja Hegde" , "Sushmita Sen" , "Sophie Choudry" , "Shruti Haasan",
-                                        "Disha Patani" , "Sonakshi Sinha" , "Taapsee Pannu" , "Mouni Roy" , "Neha Sharma" , "Jannat Zubair Rahmani" , "Nora Fatehi" , 
-                                        "Priyanka Chopra" , "Sobhita Dhulipala" ,"Diana Penty","Gal Gadot", " Sapna Pabbi", "Erica Fernandes", "Lisa Haydon", "Anya Taylor-Joy", 
-                                        "Scarlett Johansson", "Megan Fox", "Brad Pitt", "Benedict Cumberbatch", "Sonal Chauhan", "Surveen Chawla", "Zoya Afroz", "Sonarika Bhadoria",
-                                       "Evelyn Sharma", "Elli AvrRam", "Sunny Leone", "Kritika Kamra", "Sharvari Wagh", "Sonam Kapoor", "Amy Jackson","Emma Watson", "Emma Stone", 
-                                       "Jennifer Lawrence", "Zendaya", "Kelly Rohrbach", "Alexandra Daddario", "Emma Roberts", "Eva Green", "Mimi Keene", "Anne Hathaway", 
-                                        "Margot Robbie", "Elizabeth Olsen", "Hailee Steinfeld", "Addison Rae", "Mila Kunis", "Sofia Vergara", "Amber Heard", "Amanda Seyfried"
-                                        ,"Cara Delevingne", "Kaley Cuoco", "Emilia Clarke", "Olivia Munn", "Kristen Bell", "Jameela Jamil", "Kat Dennings", "Beth Behrs", 
-                                       "Hilary Duff", "Dua Lipa", "Katelyn Nacon", "Kristen Stewart", "Anna Kendrick", "Shailene Woodley", "Kiernan Shipka", "Rachel McAdams", "Samara Weaving"
-                                        ,"Bella Thorne", "Katherine Langford", "Stephanie Beatriz", "Melissa Fumero", "Carice van Houten", "Gulki Joshi", "Yukti Kapoor", "Bhavika sharma",
-                                        "Ridhima Pandit", "Tatiana Maslany", "Christina Hendricks", "Maggie Siff", "Freida Pinto", "Padma Lakshmi", "Jessica Alba", "Salma Hayek"
-                                       , "Maggie Q", "Jennifer Carpenter", "Emma Mackey", "Aimee Lou Wood", "Lily Collins", "Ashley Park", "Penélope Cruz", "Eva Mendes", "Jessica Alba",
-                                      "Han Ye-seul", "Jun Ji-hyun", " Lee Yeong-ae ", "Winona Ryder", "Natalia Dyer", "Millie Bobby Brown", "Marisa Tomei", "HoYeon Jung", "Elizabeth Banks",
-                                      "Kathryn Hahn", "Park Min-young", "Hwang Bo-ra", "Pyo Ye-jin", "Kim Ye-won", "Shiori Kutsuna", "Rashida Jones", "Cristin Milioti",
-                                       "Nicole Kidman", "Aubrey Plaza", "Selena Gomez", "Billie Eilish", "Amanda Seyfried", "Kourtney Kardashian", "Kim Kardashian", "Khloé Kardashian",
-                                       "Kendall Jenner", "Kylie Jenner", "Nimrat Kaur", "Gillian Jacobs", "Olivia Wilde", "Bérénice Marlohe", "Katie Holmes", "Morena Baccarin", "Annie Murphy",
-                                       "Emily Hampshire", "Brianne Howey", "Diksha Singh", "Shriya Pilgaonkar","Shweta Tripathi","Niharica Raizada", "Lili Reinhart", 
-                                       "Camila Mendes", "Zooey Deschanel", "Hannah Simone", "Anya Chalotra", "Freya Allan", "Anna Shaffer", "Maisie Williams", "Kim Ji-soo", "Jennie Kim"
-                                        , "Roseanne Park", "Lalisa Manobal", "Chaeyoung", "Dahyun", "Jeongyeon"];
-                    if(i < girlNames.length){
-                        while(true){
-                            var rn =Math.floor(Math.random()*girlNames.length);
-                            if(aea.includes(rn)){
-                                continue;
-                            }
-                            else{
-                                aea.push(rn);
-                                i = i +1;
-                                console.log(aea.length);
-                                gn.innerHTML= rn;
-                                aph.innerHTML="This is " + girlNames[rn] + '. Would like to meet him/her?';
-                                ai.src = `./F/${rn}.jpg`;
-                                break;
-                            }
-                        }
-                    }
-                    else{
-                        aea =[];
-                        i = 0;
-                        aph.innerHTML = 'END of the line click again to restart the list'
-                        ai.src= '';
-                    }
+                function myFunction(){
+                    const apikey; //insert api here
+                    const list = document.getElementById("no");
+                    fetch(`https://api.nytimes.com/svc/topstories/v2/world.json?api-key=${apikey}`)
+                    .then(response => response.json())
+                    .then(data => list.innerHTML = data.results[0].title);
                 }
 
             </script>
